@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+:root {
+    --cor-principal: #011936;
+    --cor-secundaria: #A9DBB8;
+    --cor-terciaria: #E2E2E2;
+}
+
+body {
+    background-color: var(--cor-principal);
+    color: white;
+}
