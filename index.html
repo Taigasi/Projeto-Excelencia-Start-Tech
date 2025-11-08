@@ -7,6 +7,8 @@
     <title>ExcelêncIA</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets/tema escuro/excelencia texto ia.PNG">
+    <!-- faz um link para o javascript -->
+    <script src="js/script.js" defer></script>
 
     <!-- -------------- FONTE PRINCIPAL ---------------->
 
@@ -15,6 +17,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
     <!-- -------------- FIM FONTE PRINCIPAL ---------------->
+
+    <!-- ................ FONTE LEXEND ....................  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!-- ................ FONTE LEXEND ....................  -->
 
 </head>
 
@@ -107,45 +115,73 @@
     <!-----------Fim do teste de icones do site---------->
 
 
-    <section id="videoinfo" class="videoinfo">
-
-        <div class="secao-video">
-
-            <div id="video1" class="classetextovideo">
-
-                <img class="imagemvideo" src="assets/tema escuro/voice (1) 2.png" alt="">
-                <div class="textos">
-                    <h2 class="titulo-video">Pratique com ExcelencIA</h2>
-                    <p class="texto-video">Treine suas respostas e aprimore suas entrevistas com a
-                        inteligência da ExelêncIA.</p>
+    <div class="container">
+        <div class="content-section">
+            <div class="feature-item active expanded" data-video="artifacts">
+                <div class="feature-header">
+                    <div class="feature-icon icon-sparkles">
+                        <img class="feature-img" src="assets/tema escuro/voice (1) 2.png" alt="">
+                    </div>
+                    <h3 class="feature-title">Pratique com ExcelêncIA</h3>
                 </div>
-
-                <hr class="linha-branca">
-            </div>
-            <!-- <div class="videos" id="primeirovid"><video src="assets/tema escuro/video-exemplo-claude.mp4"></video></div> -->
-
-
-            <div id="video2" class="classetextovideo">
-                <img class="imagemvideo" src="assets/tema escuro/live-chat 2.png" alt="">
-                <div class="textos">
-                    <h2 class="titulo-video">Treine com camera ligada</h2>
-                    <p class="texto-video">A IA observa suas expressões e dá feedback para melhorar sua performance.</p>
-                </div>
+                <p class="feature-description">Treine suas respostas e aprimore suas entrevistas com a inteligência da
+                    ExelêncIA.</p>
                 <hr class="linha-branca">
             </div>
 
-            <div id="video3" class="classetextovideo">
-                <img class="imagemvideo" src="/assets/tema escuro/apply 2.png" alt="">
-                <div class="textos">
-                    <h2 class="titulo-video">Inscreva se em vagas</h2>
-                    <p class="texto-video">Cadastre-se e aplique para oportunidades diretamente pelo
-                        site.</p>
+            <div class="feature-item" data-video="knowledge">
+                <div class="feature-header">
+                    <div class="feature-icon icon-chart">
+                        <img class="feature-img" src="assets/tema escuro/live-chat 2.png" alt="">
+                    </div>
+                    <h3 class="feature-title">Treine com o chat de voz da IA</h3>
                 </div>
+                <p class="feature-description">Converse com a inteligência artificial em tempo real e receba feedback
+                    para aprimorar sua performance.</p>
                 <hr class="linha-branca">
             </div>
 
+            <div class="feature-item" data-video="collaborate">
+                <div class="feature-header">
+                    <div class="feature-icon icon-users">
+                        <img class="feature-img" src="assets/tema escuro/apply 2.png" alt="">
+                    </div>
+                    <h3 class="feature-title">Inscreva se em vagas</h3>
+                </div>
+                <p class="feature-description">Trabalhe em conjunto em projetos, compartilhe insights e colabore em
+                    tempo real com toda a sua equipe.</p>
+                <hr class="linha-branca">
+            </div>
         </div>
-    </section>
+
+        <div class="video-section">
+            <div class="video-container">
+                <!-- Vídeo 1: Artefatos -->
+                <div class="video-wrapper active" id="video-artifacts">
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/tema escuro/video-exemplo-claude.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <!-- Vídeo 2: Conhecimento -->
+                <div class="video-wrapper" id="video-knowledge">
+                    <video muted loop playsinline>
+                        <source src="assets/tema escuro/video-exemplo-claude.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <!-- Vídeo 3: Colaboração -->
+                <div class="video-wrapper" id="video-collaborate">
+                    <video muted loop playsinline>
+                        <source src="assets/tema escuro/video-exemplo-claude.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="video-overlay"></div>
+                <div class="badge" id="video-badge">✨ Artefatos</div>
+            </div>
+        </div>
+    </div>
 
     <section id="infografico" class="infografico">
         <div class="container">

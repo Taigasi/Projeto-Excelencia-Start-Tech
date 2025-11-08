@@ -40,7 +40,7 @@ p {
 }
 
 .titulo-principal {
-    font-family: 'Rezland', sans-serif;
+    font-family: 'Lexend', sans-serif;
     font-weight: normal;
 }
 
@@ -579,26 +579,113 @@ button:hover {
 
 
 
+/* ..................... CARDS DE INTRODUÇÃO - VÍDEO ..................  */
 
-/* .........................SEÇÃO VIDEO.......................  */
+.container {
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    direction: rtl;
+}
 
+.container>* {
+    direction: ltr;
+}
 
-.secao-video {
-    flex-direction: column;
-    align-items: end;
+.content-section {
     display: flex;
-    padding: 20px 80px;
-    gap: 2px;   
-    
+    flex-direction: column;
+    gap: 30px;
 }
 
-.titulo-video {
-    font-family: 'Rezland', sans-serif;
-    font-weight: 100;
+.feature-item {
+    padding: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.texto-video {
-    max-width: 400px;
+/* ADICIONADO: Container flex para ícone + título */
+.feature-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.feature-description:hover {
+    color: var(--cor-secundaria);
+}
+
+.feature-title:hover {
+    color: var(--cor-secundaria);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 24px;
+}
+
+.icon-sparkles {
+    background-color: var(--cor-principal);
+
+    padding: 15px;
+}
+
+.icon-chart {
+    background-color: var(--cor-principal);
+
+    padding: 15px;
+}
+
+.icon-users {
+    background-color: var(--cor-principal);
+
+    padding: 15px;
+}
+
+.feature-title {
+    font-size: 24px;
+    font-weight: 600;
+    /* REMOVIDO: margin-bottom: 12px; */
+    line-height: 1.3;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 500;
+}
+
+.feature-description {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    margin-top: 0;
+}
+
+.feature-item.expanded .feature-description {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 12px;
+}
+
+.feature-img {
+    width: 45px;
+    height: auto;
+}
+
+.video-section {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #1a1a1a;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
 .linha-branca {
@@ -611,40 +698,80 @@ button:hover {
     margin: 20px 0 0 0;
 }
 
-.classetextovideo {
-    display: flex;
-    align-items: center;
-    gap: 16px; /* espaço entre ícone e textos */
-    margin: 8px 0 20px 0;
-    flex-wrap: wrap; /* permite que a linha (hr) quebre para a próxima linha */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #0a0a0a;
 }
 
-.imagemvideo {
-    width: 48px; /* tamanho do ícone */
-    height: auto;
-    margin: 0; /* removido margin-bottom para ficar alinhado ao centro */
-    flex: 0 0 auto;
-    display: block;
-}
-
-.videos {
+.video-wrapper {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
+.video-wrapper.active {
+    opacity: 1;
+}
 
-/* Responsividade: em telas pequenas empilha o ícone acima do texto */
-@media screen and (max-width: 830px) {
-    .classetextovideo {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.4));
+    pointer-events: none;
+    z-index: 1;
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
-    .imagemvideo {
-        width: 56px;
-        margin-bottom: 6px;
+    .video-section {
+        order: -1;
     }
 }
 
+@media (max-width: 768px) {
+    body {
+        padding: 30px 15px;
+    }
 
+    .feature-title {
+        font-size: 20px;
+    }
 
+    .feature-description {
+        font-size: 14px;
+    }
+}
+
+/* .....................FIM CARDS DE INTRODUÇÃO - VÍDEO ..................  */
